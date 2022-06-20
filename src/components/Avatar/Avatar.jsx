@@ -30,7 +30,6 @@ Avatar.propTypes = {
   /**
    * What background color to use
    */
-  backgroundColor: PropTypes.string,
   /**
    * How large should the button be?
    */
@@ -45,7 +44,9 @@ Avatar.propTypes = {
   /**
    * Optional click handler
    */
-  onClick: PropTypes.func,
+  // onClick: PropTypes.func,
+  backgroundColor: PropTypes.string,
+
 };
 
 Avatar.defaultProps = {
@@ -53,5 +54,5 @@ Avatar.defaultProps = {
   active: true,
   size: 'medium',
   content: 'photo',
-  onClick: undefined,
+  // onClick: undefined,
 };
