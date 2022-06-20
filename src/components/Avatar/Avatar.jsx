@@ -5,12 +5,12 @@ import './avatar.css';
 /**
  * Primary UI component for user interaction
  */
-export const Avatar = ({ round, backgroundColor, size, label, ...props }) => {
-  const mode = round ? 'storybook-avatar--round' : 'storybook-avatar--squared';
+export const Avatar = ({ active, backgroundColor, size, content, label, ...props }) => {
+  const mode = active ? 'storybook-avatar--active' : 'storybook-avatar--disabled';
   return (
     <button
       type="button"
-      className={['storybook-avatar', `storybook-avatar--${size}`, mode].join(' ')}
+      className={['storybook-avatar', `storybook-avatar--${size}`, `storybook-avatar--${content}`, mode].join(' ')}
       style={backgroundColor && { backgroundColor }}
       {...props}
     >
@@ -23,7 +23,7 @@ Avatar.propTypes = {
   /**
    * Is this the principal call to action on the page?
    */
-  round: PropTypes.bool,
+  active: PropTypes.bool,
   /**
    * What background color to use
    */
@@ -32,10 +32,13 @@ Avatar.propTypes = {
    * How large should the button be?
    */
   size: PropTypes.oneOf(['small', 'medium', 'large']),
+
+  content: PropTypes.oneOf(['photo', 'icon', 'letters']),
+
   /**
    * Button contents
    */
-  label: PropTypes.string.isRequired,
+  label: PropTypes.string,
   /**
    * Optional click handler
    */
@@ -44,7 +47,8 @@ Avatar.propTypes = {
 
 Avatar.defaultProps = {
   backgroundColor: null,
-  round: false,
+  active: true,
   size: 'medium',
+  content: 'photo',
   onClick: undefined,
 };

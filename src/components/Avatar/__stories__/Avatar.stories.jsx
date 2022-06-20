@@ -13,14 +13,14 @@ export default {
 };
 
 const Template = (args) => <Avatar {...args} />;
-export const Round = Template.bind({});
-Round.args = {
-  round: true,
+export const Active = Template.bind({});
+Active.args = {
+  active: true,
   // label: 'Avatar',
 };
 
-export const Square = Template.bind({});
-Square.args = {
+export const Disabled = Template.bind({});
+Disabled.args = {
   // label: 'Avatar',
 };
 
@@ -34,4 +34,22 @@ export const Small = Template.bind({});
 Small.args = {
   size: 'small',
   // label: 'Avatar',
+};
+
+export const Photo = Template.bind({});
+Photo.args = {
+  content: 'photo',
+  // label: 'Avatar',
+};
+
+export const Icon = Template.bind({});
+Icon.args = {
+  content: 'icon',
+  // label: 'Avatar',
+};
+
+export const Letters = Template.bind({});
+Letters.args = {
+  content: 'letters',
+  label: 'AB',
 };
