@@ -7,6 +7,9 @@ import './avatar.css';
  */
 export const Avatar = ({ active, backgroundColor, size, content, label, ...props }) => {
   const mode = active ? 'storybook-avatar--active' : 'storybook-avatar--disabled';
+  if (content !== "letters") {
+    label = '';
+  }
   return (
     <button
       type="button"
